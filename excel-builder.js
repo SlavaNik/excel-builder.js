@@ -43,9 +43,16 @@ define([
                             options.success(event.data.data);
                         }
                     });
+
+                    var url = require.toUrl('JSZip');
+                    var cleanUrl = url.split('?', 1)[0];
+                    if ( ! /\.js$/.test(cleanUrl) ) {
+                        url = url.replace(cleanUrl, cleanUrl+'.js');
+                    }
+
                     worker.postMessage({
                         files: files,
-                        ziplib: require.toUrl('JSZip'),
+                        ziplib: url,
                         base64: (!options || options.base64 !== false)
                     });
                 },

@@ -344,11 +344,18 @@ function (require, _, util, StyleSheet, Worksheet, SharedStrings, RelationshipMa
                         break;
                 }
             }, false);
+
+            var url = require.toUrl('underscore');
+            var cleanUrl = url.split('?', 1)[0];
+            if ( ! /\.js$/.test(cleanUrl) ) {
+                url = url.replace(cleanUrl, cleanUrl+'.js');
+            }
+
             worker.postMessage({
                 instruction: 'setup',
                 config: {
                     paths: {
-                        underscore: require.toUrl('underscore').slice(0, -3)
+                        underscore: url
                     },
                     shim: {
                         'underscore': {
