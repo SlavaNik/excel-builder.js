@@ -128,7 +128,7 @@ define(['underscore', './util'], function (_, util) {
                     'horizontal',
                     'justifyLastLine',
                     'readingOrder',
-                    'relativeIndent',
+                    'indent',
                     'shrinkToFit',
                     'textRotation',
                     'vertical',
