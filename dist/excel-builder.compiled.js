@@ -2258,7 +2258,7 @@ define('Excel/StyleSheet',['underscore', './util'], function (_, util) {
                     'horizontal',
                     'justifyLastLine',
                     'readingOrder',
-                    'relativeIndent',
+                    'indent',
                     'shrinkToFit',
                     'textRotation',
                     'vertical',
